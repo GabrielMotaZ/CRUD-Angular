@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+</head>
+
+<body>
+
+  <div (keydown.enter)="tryLogin()" class="centerDIV">
+    <h1>Login</h1>
+
+    <input type="text" [(ngModel)]="account.login" name="username" id="username">
+    <br>
+    <input type="password" [(ngModel)]="account.password" name="password" id="password">
+    <br>
+
+    <button (click)="tryLogin()">Login</button>
+
+    <ng-container *ngIf="errorMessage != '';">
+      <p>{{errorMessage}}</p>
+    </ng-container>
+    
+  </div>
+</body>
+</html>
